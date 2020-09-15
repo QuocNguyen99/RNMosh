@@ -1,10 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, View, StatusBar } from 'react-native'
 
-export default function Screen({ children }) {
-    console.log(StatusBar.currentHeight);
+export default function Screen({ children, style }) {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
             {children}
         </View>
     )
@@ -12,6 +11,7 @@ export default function Screen({ children }) {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         marginTop: StatusBar.currentHeight
     }
 })

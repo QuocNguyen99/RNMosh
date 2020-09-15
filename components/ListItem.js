@@ -6,7 +6,7 @@ import AppText from '../components/AppText';
 import ListItemDelete from '../components/ListItemDelete';
 import colors from '../config/color';
 
-export default function ListItem({ title, subTitle, image, onPress, index, handlerDelete }) {
+export default function ListItem({ title, subTitle, image, IconComponent, onPress, index, handlerDelete }) {
 
     const [itemActive, setItemActive] = useState(null);
 
@@ -42,10 +42,11 @@ export default function ListItem({ title, subTitle, image, onPress, index, handl
                 underlayColor={colors.light}
                 onPress={onPress}>
                 <View style={styles.container}>
-                    <Image style={styles.image} source={image} />
+                    {IconComponent}
+                    {image && <Image style={styles.image} source={image} />}
                     <View style={styles.titleContainer}>
                         <AppText>{title}</AppText>
-                        <AppText style={styles.subTitle}>{subTitle}</AppText>
+                        {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
                     </View>
                 </View>
             </TouchableHighlight>
@@ -62,11 +63,14 @@ const styles = StyleSheet.create({
     subTitle: {
         color: colors.medium
     },
+    titleContainer: {
+        marginLeft: 10,
+        justifyContent: 'center'
+    },
     image: {
         width: 70,
         height: 70,
-        borderRadius: 35,
-        marginRight: 10
+        borderRadius: 35
     },
 
 })

@@ -4,5 +4,5 @@ export default {
     black: 'black',
     white: 'white',
     medium: '#6e6969',
-    light: 'lightgrey',
+    light: 'whitesmoke',
 }
