@@ -18,7 +18,7 @@ export default function AppTextInput({ icon, items, selectedItem, placeholder, o
                     <MaterialCommunityIcons name='chevron-down' size={20} color={defaultStyles.colors.medium} />
                 </View>
             </TouchableWithoutFeedback>
-            <Modal visible={modalVisible} animationType='slide'>
+            <Modal visible={modalVisible} animationType='slide '>
                 <TouchableOpacity onPress={() => { setmodalVisible(false) }}>
                     <Text style={{ color: 'blue', textAlign: 'center', fontSize: 20 }} >Close</Text>
                 </TouchableOpacity>
